@@ -1,10 +1,8 @@
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
-import { act, waitForElement } from "react-dom/test-utils";
-import axios from "axios";
-import App from "./App";
+import { act } from "react-dom/test-utils";
 
-jest.mock("axios");
+import AddProduct from "./AddProduct";
 
 let container = null;
 beforeEach(() => {
@@ -18,14 +16,10 @@ afterEach(() => {
   container = null;
 });
 
-it("renders App data", () => {
+it("renders Add product data", () => {
   act(() => {
-    render(<App />, container);
+    render(<AddProduct />, container);
   });
-
-  expect(container.querySelector("[data-testid=order]").textContent).toBe(
-    "Order Products"
-  );
 
   const button = container.querySelector("[data-testid=addProduct]");
   expect(button.textContent).toBe("+ Add Product");

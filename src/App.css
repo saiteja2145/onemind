@@ -1,38 +1,82 @@
-.App {
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.products__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 18rem));
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+.product__card {
+  padding: 1rem;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product__card h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product__card h3 {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bth__continer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.bth__continer button {
+  padding: 0.2rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0 1rem;
+  outline: none;
+  cursor: pointer;
+  background-color: sandybrown;
+  color: #fff;
+}
+
+.bth__continer button:disabled {
+  background-color: #ccc;
+}
+
+.product__container {
+  margin: 1rem;
+}
+
+.product__container button {
+  margin: 1rem;
+}
+
+.input__grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.input__grid input,
+.message {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  padding: 0.2rem 0.5rem;
+}
+
+.input__data {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error {
+  color: red;
+  font-size: 0.6rem;
 }
